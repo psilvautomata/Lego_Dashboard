@@ -6,7 +6,20 @@ remote_branch: gh-pages
 theme:
   name: material
   language: pt-BR
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
 nav:
   - Início: index.md
+  - Arquitetura: arquitetura.md
+  - Desenvolvimento: desenvolvimento.md
+  - Configuração: configuracao.md
+  - Dashboard: dashboard.md
+  - Pipelines:
+      - Ingestão: pipelines/ingestao.md
+      - Transformação: pipelines/transformacao.md
+      - Marts: pipelines/marts.md
+  - Relatório: relatorio.md
 plugins:
   - search
