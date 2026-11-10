@@ -38,7 +38,7 @@ MARTS = (
     "ultimos_lancamentos",
 )
 RAIZ = Path(__file__).resolve().parent
-ARQUIVO_HTML = RAIZ / "relatorio.html"
+ARQUIVO_HTML = RAIZ / "site_docs" / "relatorio.html"
 
 
 def _cartoes_html(kpi):
@@ -181,6 +181,7 @@ def main():
         raise SystemExit(1)
 
     dados = painel.aplicar_periodo(dados, 1975, 2025)
+    ARQUIVO_HTML.parent.mkdir(parents=True, exist_ok=True)
     ARQUIVO_HTML.write_text(_html_completo(dados), encoding="utf-8")
     tamanho_kb = ARQUIVO_HTML.stat().st_size / 1024
     print(f"Relatório gerado: {ARQUIVO_HTML} ({painel.numero(tamanho_kb, casas=1)} KB)")

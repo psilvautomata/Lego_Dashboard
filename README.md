@@ -82,7 +82,19 @@ Gere a versão estática para abrir no navegador:
 uv run python relatorio.py
 ```
 
-O relatório é salvo como `relatorio.html` na raiz. Seus gráficos Plotly carregam a biblioteca pelo CDN, portanto o navegador precisa de acesso à internet para exibi-los.
+O relatório é salvo em `site_docs/relatorio.html`, a pasta fonte do site MkDocs. Para visualizar o site localmente, incluindo a página inicial e o relatório:
+
+```powershell
+uv run mkdocs serve
+```
+
+Para gerar os arquivos estáticos sem publicar:
+
+```powershell
+uv run mkdocs build
+```
+
+O workflow do GitHub Actions publica automaticamente o site na branch `gh-pages` quando há push para `main`. Configure uma vez em **Settings → Pages → Build and deployment** a origem **Deploy from a branch**, branch `gh-pages` e pasta `/(root)`. Os gráficos Plotly carregam a biblioteca pelo CDN, portanto o navegador precisa de acesso à internet para exibi-los.
 
 Para explorar o banco pela interface do DuckDB:
 
@@ -112,4 +124,4 @@ pre-commit run --all-files
 
 ## Arquivos gerados e dados
 
-`lego.duckdb`, seu arquivo WAL, `relatorio.html` e caches de ferramentas são saídas locais e ficam fora do Git. Os CSVs em `data/` são entradas necessárias do pipeline e não são ignorados pelo `.gitignore`.
+`lego.duckdb`, seu arquivo WAL, o relatório antigo na raiz, o site compilado em `site/` e caches de ferramentas são saídas locais e ficam fora do Git. `site_docs/` contém as fontes do MkDocs e o relatório estático destinado à publicação; esses arquivos devem ser versionados. Os CSVs em `data/` são entradas necessárias do pipeline e não são ignorados pelo `.gitignore`.
