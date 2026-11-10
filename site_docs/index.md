@@ -1,19 +1,27 @@
 # LEGO Analytics Hub
 
-Explore a evolução histórica do catálogo LEGO entre **1975 e 2025**. O relatório reúne indicadores do catálogo, lançamentos por ano, distribuição de sets por cores únicas, média de peças e temas com mais lançamentos.
+O projeto apresenta o catálogo público de LEGO de **1975 a 2025** por meio de um pipeline de dados local, um dashboard interativo e um relatório estático.
 
-## Relatório estático
+O objetivo é transformar os arquivos CSV em camadas analíticas reproduzíveis e deixar as regras de negócio nas consultas SQL.
 
-[Abrir o relatório completo](relatorio.html){ .md-button .md-button--primary }
+## Preparar os dados
 
-O relatório é gerado a partir dos marts locais pelo comando `uv run python relatorio.py`. Ele é uma captura dos dados disponíveis no momento da geração; os gráficos carregam Plotly pelo CDN e precisam de acesso à internet.
-
-## Dashboard interativo
-
-O dashboard interativo com filtro de período pode ser executado localmente com:
+Na raiz do projeto, instale as dependências e execute as três etapas em ordem:
 
 ```powershell
-uv run streamlit run app.py
+uv sync
+uv run python -m pipeline.ingestao
+uv run python -m pipeline.transformacao
+uv run python -m pipeline.marts
 ```
 
-O GitHub Pages hospeda o site estático e não executa o aplicativo Streamlit.
+## Conteúdo
+
+- [Arquitetura](arquitetura.md)
+- [Desenvolvimento](desenvolvimento.md)
+- [Configuração](configuracao.md)
+- [Dashboard](dashboard.md)
+- [Pipeline de ingestão](pipelines/ingestao.md)
+- [Relatório estático](relatorio.md)
+
+O GitHub Pages publica esta documentação e o relatório HTML. O dashboard interativo Streamlit é executado localmente; GitHub Pages não executa aplicações Python.
