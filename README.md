@@ -1,6 +1,9 @@
 # LEGO Analytics Hub
 
-Pipeline de dados e dashboard para explorar o catálogo público de LEGO de 1975 a 2025. O projeto usa Python, pandas e DuckDB; as regras analíticas ficam em consultas SQL, e Streamlit e Plotly apresentam os resultados. Base de dados disponível originalmente em: https://www.kaggle.com/code/sumedh1507/lego-game-analytics?select=lego_themes_1975_2025.csv
+Pipeline de dados e dashboard para explorar o catálogo público de LEGO de 1975 a 2025. O projeto usa Python, pandas e DuckDB; as regras analíticas ficam em consultas SQL, e Streamlit e Plotly apresentam os resultados. 
+Base de dados disponível originalmente em: https://www.kaggle.com/code/sumedh1507/lego-game-analytics?select=lego_themes_1975_2025.csv
+
+![.](data/banner.jpg)
 
 ## Fluxo de dados
 
