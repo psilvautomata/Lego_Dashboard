@@ -5,8 +5,6 @@ Base de dados disponível originalmente em: https://www.kaggle.com/code/sumedh15
 
 ![.](data/banner.jpg)
 
-![.](data/banner.jpg)
-
 ## Fluxo de dados
 
 ```text
