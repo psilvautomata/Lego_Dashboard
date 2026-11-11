@@ -6,6 +6,10 @@ remote_branch: gh-pages
 theme:
   name: material
   language: pt-BR
+  features:
+    - navigation.sections
+    - navigation.top
+    - content.code.copy
   palette:
     - scheme: default
       primary: indigo
