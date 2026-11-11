@@ -1,27 +1,51 @@
-# Python and virtual environment
-.venv/
+# Python and virtual environments
 __pycache__/
 *.py[cod]
-
-# Test and lint artifacts
-.pytest_cache/
-.pytest_tmp/
-.ruff_cache/
-.coverage
-.coverage.*
-htmlcov/
+*$py.class
+.venv/
+venv/
+env/
+ENV/
+.Python
 
 # Local environment and secrets
 .env
 .env.*
 !.env.example
 
-# Generated project outputs
+# Test, coverage, and lint outputs
+.pytest_cache/
+.pytest_tmp/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+.tox/
+.nox/
+.hypothesis/
+.cache/
+
+# Local databases and generated reports
 /lego.duckdb
 /lego.duckdb.wal
 /relatorio.html
+
+# MkDocs build output (source files remain tracked in site_docs/)
 /site/
 
-# Editor settings
+# Python packaging and type-checker outputs
+build/
+dist/
+*.egg-info/
+.mypy_cache/
+.pytype/
+.pyre/
+.dmypy.json
+dmypy.json
+
+# Editor and local history
 .vscode/
 .idea/
+.history/
+.ionide/
